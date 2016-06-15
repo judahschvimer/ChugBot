@@ -173,7 +173,8 @@ ON UPDATE CASCADE,
 right_chug_name varchar(50) NOT NULL,
 FOREIGN KEY fk_right_chug_name(right_chug_name) REFERENCES chugim(name)
 ON DELETE CASCADE
-ON UPDATE CASCADE)
+ON UPDATE CASCADE,
+UNIQUE KEY uk_chug_dedup_instances(left_chug_name,right_chug_name))
 COLLATE utf8_unicode_ci
 ENGINE = INNODB;
 
