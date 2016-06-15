@@ -73,7 +73,7 @@
                     $db->addWhereColumn("left_chug_name", $leftChug, 's');
                     $db->addWhereColumn("right_chug_name", $rightChug, 's');
                     $delOk = $db->deleteFromTable("chug_dedup_instances", $err);
-                    if (! $insertOk) {
+                    if (! $delOk) {
                         header('HTTP/1.1 500 Internal Server Error');
                         die(json_encode(array("error" => $err)));
                     }

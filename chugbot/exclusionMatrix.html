@@ -4,11 +4,14 @@
   <head>
   <meta charset="utf-8" />
   <title>Exclusion Matrix</title>
-  <link rel="stylesheet"
-        href="jquery/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" href="jquery/ui/1.11.4/themes/smoothness/jquery-ui.css" />
   <script src="jquery/jquery-1.11.3.min.js"></script>
   <script src="jquery/ui/1.11.4/jquery-ui.js"></script>
-  <script src="meta/matrix.js"></script>
+
+  <script src="meta/matrix/js/matrix.js"></script>
+  <link href="meta/matrix/css/960.css" rel="stylesheet" media="screen" />
+  <link href="meta/matrix/css/defaultTheme.css" rel="stylesheet" media="screen" />
+  <link href="meta/matrix/css/myTheme.css" rel="stylesheet" media="screen" />
   <link rel="stylesheet" href="meta/view.css" />
   <style>
     .control_buttons {
@@ -34,20 +37,20 @@
     }
     .matrix_container
     {
-    position: relative;
-    overflow: auto;
+    margin: auto;
     margin-top: 20px;
-    margin-left: 10px;
-    width: 95%;
-    font-size: 1.2em;
-    background: #fff;
-    padding-bottom: 1px;
-    border: 2px dotted silver;
+    width: 85%;
+    overflow: auto;
     border-radius: 5px;
     border-collapse: collapse;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     }
+    .matrix_outer
+    {
+    }
+    </style>
+<!--
     .matrix_container table {
     width: 95%;
     text-align: left;
@@ -77,6 +80,7 @@
     width: 25%;
     }
   </style>
+-->
 
   </head>
   <body>
@@ -101,8 +105,40 @@
     
     <div class="image_container"><img src="images/Matrix.jpg" alt="" /></div>
 
-    <div id="checkboxes"></div>
+    <div class="centered_container">
+    <p>Select the first letter of the chug you'd like to work with:</p>
+    <select id="firstletter">
+      <option value="a">a</option>
+      <option value="b">b</option>
+      <option value="c">c</option>
+      <option value="d">d</option>
+      <option value="e">e</option>
+      <option value="f">f</option>
+      <option value="g">g</option>
+      <option value="h">h</option>
+      <option value="i">i</option>
+      <option value="j">j</option>
+      <option value="k">k</option>
+      <option value="l">l</option>
+      <option value="m">m</option>
+      <option value="n">n</option>
+      <option value="o">o</option>
+      <option value="p">p</option>
+      <option value="q">q</option>
+      <option value="r">r</option>
+      <option value="s">s</option>
+      <option value="t">t</option>
+      <option value="u">u</option>
+      <option value="v">v</option>
+      <option value="w">w</option>
+      <option value="x">x</option>
+      <option value="y">y</option>
+      <option value="z">z</option>
+    </select>
+    <input title="Display" type="submit" name="ShowMatrix" id="ShowMatrix" value="Show Matrix!" />
     </div>
+
+    <div id="checkboxes" class="matrix_outer"></div>
     
     <div class="control_buttons">
       <input title="Save changes and exit this page"  type="submit" name="SaveChanges" id="SaveChanges" value="Save Changes" />
